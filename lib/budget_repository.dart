@@ -27,7 +27,7 @@ class BudgetRepository {
         headers: {
           HttpHeaders.authorizationHeader:
               'Bearer ${dotenv.env['NOTION_API_KEY']}',
-          'Notion-Version': '2021-15-03',
+          'Notion-Version': '2021-05-13',
         },
       );
 
@@ -36,10 +36,10 @@ class BudgetRepository {
         return (data['results'] as List).map((e) => Item.fromMap(e)).toList()
           ..sort((a, b) => b.date.compareTo(a.date));
       } else {
-        throw const Failure(message: 'Something went wrong');
+        throw const Failure(message: 'Something went wrong 1');
       }
     } catch (_) {
-      throw const Failure(message: 'Something went wrong');
+      throw const Failure(message: 'Something went wrong 2');
     }
   }
 }
