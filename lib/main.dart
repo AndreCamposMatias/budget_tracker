@@ -10,11 +10,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Notion Budget Tracker',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.white,
       ),
-      home: Scaffold(),
+      home: BudgetScreen(),
     );
+  }
+}
+
+class BudgetScreen extends StatefulWidget {
+  @override
+  _BudgetScreenState createState() => _BudgetScreenState();
+}
+
+class _BudgetScreenState extends State<BudgetScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
   }
 }
