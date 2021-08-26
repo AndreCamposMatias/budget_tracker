@@ -93,7 +93,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
             } else if (snapshot.hasError) {
               //Show failure error message.
               final failure = snapshot.error as Failure;
-              return Center(child: Text(failure.message));
+              debugPrint('${failure.message}');
+              return Center(child: Text("Some went wrong please try again!"));
             }
             // Show a loading spinner.
             return const Center(child: CircularProgressIndicator());

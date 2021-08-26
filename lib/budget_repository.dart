@@ -36,10 +36,12 @@ class BudgetRepository {
         return (data['results'] as List).map((e) => Item.fromMap(e)).toList()
           ..sort((a, b) => b.date.compareTo(a.date));
       } else {
-        throw const Failure(message: 'Something went wrong 1');
+        throw Failure(
+            message:
+                'Error: ${response.statusCode}, Message: ${response.reasonPhrase}');
       }
-    } catch (_) {
-      throw const Failure(message: 'Something went wrong 2');
+    } catch (e, stackTrace) {
+      throw Failure(message: 'Error: ${e.toString()}, Message: ${stackTrace}');
     }
   }
 }
